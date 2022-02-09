@@ -1,10 +1,15 @@
-
 import './App.css';
-
+import Right from "./Components/Right";
+import Left from './Components/Left';
 function App() {
   return (
-    <div className="App">
-      <h1>Quiz App</h1>
+    <div className="main">
+      <div className="leftsec">
+      Questions
+      </div>
+      <div className="rightsec">
+      <Left/>
+      </div>
     </div>
   );
 }
