@@ -1,17 +1,17 @@
-.main{
-    height: 100vh;
-    width: 100vw;
-    display:flex;
-    color: white;
+.main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  color: white;
 }
-.leftsec{
-    background: url("./assets/back.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 75%;
+.leftsec {
+  background: url("./assets/back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 75%;
 }
-.rightsec{
-    width: 25%;
-    background-color: navy
+.rightsec {
+  width: 25%;
+  background-color: navy;
 }

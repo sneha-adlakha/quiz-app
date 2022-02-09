@@ -1,14 +1,14 @@
-import './App.css';
+import "./App.css";
 import Right from "./Components/Right";
-import Left from './Components/Left';
+import Left from "./Components/Left";
 function App() {
   return (
     <div className="main">
       <div className="leftsec">
-      Questions
+        <Left />
       </div>
       <div className="rightsec">
-      <Left/>
+        <Right />
       </div>
     </div>
   );
