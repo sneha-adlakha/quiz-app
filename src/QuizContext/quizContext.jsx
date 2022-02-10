@@ -15,7 +15,7 @@ export const QuizProvider=({children})=>{
 
 
 export const initialState={
-    username:null,
+    userName:null,
     Questionall,
     questionNo:1,
     timeout:false,

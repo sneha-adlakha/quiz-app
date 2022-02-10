@@ -4,10 +4,18 @@ switch(type)
 {
     case "CHANGEQUES":
     {
-        return {...state,questionNo:state.questionNo+1}
+        const searchPrice=state.MoneyPyramid.find((item)=>item.id===payload)
+        if(payload>1)
+        {
+            return {...state,questionNo:state.questionNo+1,priceMoney:searchPrice.amount}
+        }
+        return {...state,questionNo:state.questionNo+1,priceMoney:0}
     }
     case "TIMEOUT":{
         return {...state,timeout:true}
+    }
+    case "SETUSER":{
+        return {...state,userName:payload}
     }
     default: 
     return state;

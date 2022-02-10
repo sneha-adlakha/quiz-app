@@ -4,7 +4,7 @@ import {useQuiz} from "../QuizContext/quizContext";
 
 export const Card=()=>
  {
-  const {state:{Questionall,questionNo},dispatch}=useQuiz();
+  const {state:{Questionall,questionNo,priceMoney,userName},dispatch}=useQuiz();
   const [question,setQuestion]=useState(null);
   const [selectedAnswer,setSelectedAnswer]=useState(null);
   const [className,setClassName]=useState("option-desc")
@@ -17,7 +17,7 @@ export const Card=()=>
       callback();
     },duration);
   };
-  function clickHandler(o)
+  function clickHandler(o,id)
   {
     setSelectedAnswer(o);
     setClassName("option-desc active");
@@ -28,7 +28,7 @@ export const Card=()=>
       if(o.isCorrect){
         delay(1000,()=>
         {
-          dispatch({type:"CHANGEQUES"});
+          dispatch({type:"CHANGEQUES",payload:id});
           setSelectedAnswer(null);
         });
       }
@@ -37,14 +37,15 @@ export const Card=()=>
       }
     });
   }
+  console.log(priceMoney,userName);
   return (
     <div className="question-panel">
     <div className="question">{question?.question}</div>
     <div className="options">
       {question?.options.map((o)=>(
-        <div 
+        <div
         className={selectedAnswer===o?className:"option-desc"}
-        onClick={()=>!selectedAnswer && clickHandler(o)}>
+        onClick={()=>!selectedAnswer && clickHandler(o,question.id)}>
         {o.value}
         </div>
       ))}
