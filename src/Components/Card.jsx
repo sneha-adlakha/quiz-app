@@ -10,7 +10,7 @@ export const Card=()=>
   const [className,setClassName]=useState("option-desc")
   useEffect(()=>{
     setQuestion(Questionall[questionNo-1]);
-  },Questionall,questionNo);
+  },[Questionall,questionNo]);
   const delay=(duration,callback)=>
   {
     setTimeout(()=>{
@@ -26,7 +26,8 @@ export const Card=()=>
     });
     delay(5000,()=>{
       if(o.isCorrect){
-        delay(1000,()=>{
+        delay(1000,()=>
+        {
           dispatch({type:"CHANGEQUES"});
           setSelectedAnswer(null);
         });
@@ -35,8 +36,6 @@ export const Card=()=>
         dispatch({type:"TIMEOUT"})
       }
     });
-
-
   }
   return (
     <div className="question-panel">

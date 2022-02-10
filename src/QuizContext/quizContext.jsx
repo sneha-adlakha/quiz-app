@@ -1,6 +1,7 @@
 import React,{createContext, useContext, useReducer} from "react";
 import {Questionall} from "./Questions";
 import {MoneyPyramid} from "./MoneyPyramid";
+import {quizReducer} from "./quizReducer"
 export const QuizContext =createContext();
 
 export const QuizProvider=({children})=>{
@@ -12,15 +13,7 @@ export const QuizProvider=({children})=>{
     )
 }
 
-export const quizReducer=(state,action)=>
-{
-switch(action.type){
-    case "CHANGEQUES":{
-        return {...state,questionNo:state.questionNo((prev)=>prev+1)}
-    }
-    default: return state;
-}
-}
+
 export const initialState={
     username:null,
     Questionall,
